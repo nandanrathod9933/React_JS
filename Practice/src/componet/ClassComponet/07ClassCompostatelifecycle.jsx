@@ -57,52 +57,10 @@ class ClassCompostatelifecycle extends Component {
                 {/* <p>Change Data</p> */}
                 {/* <button onClick={changeDataFunc}>Click</button> */}
                 {/* <button onClick={this.changedata}>Click</button> */}
-                <p className='display-5'><strong>State</strong>{this.state.data}</p>
+                <p className='display-5'><strong>State</strong>   {this.state.data}</p>
             </>
         );
     }
 }
 export default ClassCompostatelifecycle;
 
-
-// const Loading = () =>
-//     <div className="spinner"></div>
-
-
-
-// class ClassCompostatelifecycle extends React.Component {
-//     state = {
-//         loading: true,
-//         data: "something"
-
-//     };
-
-//     componentDidMount() {
-//         this.isLoading = setTimeout(() => { this.setState({ loading: false }) }, 2300);
-//     }
-//     componentWillUnmount() {
-//         clearTimeout(this.isLoading);
-//     }
-
-//     timer = () => setTimeout(() => {
-//         this.setState({ loading: false })
-//     }, 2300);
-
-//     render() {
-//         const { loading } = this.state;
-//         // const { data } = this.state;
-//         return (
-            
-//             loading ? (<><Loading /> </>)
-//                 : (<div className="content">
-//                     <h1>Hello</h1>
-//                 </div>)
-//         )
-//     }
-// }
-
-// // ReactDOM.render(
-// //     // <Page />,
-// //     document.getElementById('root')
-// // )
-// export default ClassCompostatelifecycle;

@@ -15,13 +15,13 @@ class CustomCardStrcutre extends Component {
             <div>
 
                 <MDBCard>
-                    <MDBCardImage src={this.props.kaushik} position='top' alt='...' />
+                    <MDBCardImage src={this.props.imgsrc} position='top' alt='...' style={{ height: "200px", objectFit: "cover" }} />
                     <MDBCardBody>
-                        <MDBCardTitle>{this.props.title}</MDBCardTitle>
+                        <MDBCardTitle className='text-capitalize'>{this.props.title}</MDBCardTitle>
                         <MDBCardText>
-                            Some quick example text to build on the card title and make up the bulk of the card's content.
+                            {this.props.paragraph}
                         </MDBCardText>
-                        <MDBBtn href='#'>Button</MDBBtn>
+                        <MDBBtn href='#'>Buy</MDBBtn>
                     </MDBCardBody>
                 </MDBCard>
             </div>
@@ -34,3 +34,5 @@ export default CustomCardStrcutre;
 //     return (
 //     );
 // }
+
+
