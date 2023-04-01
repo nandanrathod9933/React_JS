@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class LoaderCompo extends Component {
+class ClassCompoJsxExample extends Component {
     render() {
         return (
             <>
-                <div className="spinner"></div>
+                <h2>JSX</h2>
             </>
         );
     }
 }
 
-export default LoaderCompo;
+export default ClassCompoJsxExample;
