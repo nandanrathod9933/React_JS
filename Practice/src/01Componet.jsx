@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class ClassCompoIntro extends Component {
+class ComponetExample extends Component {
     render() {
         return (
             <div>
-                Welcome
+                test
             </div>
         );
     }
 }
 
-export default ClassCompoIntro;
+export default ComponetExample;
