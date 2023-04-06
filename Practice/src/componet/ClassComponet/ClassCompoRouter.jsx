@@ -12,6 +12,8 @@ import ClassCompoConditionalRendering from "./10ClassCompoConditionalRendering.j
 import ClassCompoListKeyMap from "./11ClassCompoListKeyMap.jsx"
 import ClassCompoListKeyMapExample from "./12ClassCompoListKeyMapExample.jsx"
 import ClassCompoDynamicSubMenu from "./13ClassCompoDynamicSubMenu.jsx"
+import ClassCompoSpreadRest from "./14ClassCompoSpreadRest.jsx"
+import ClassCompoControlledCompo from "./15ClassCompoControlledCompo.jsx"
 
 class classCompoRouter extends Component {
     render() {
@@ -31,6 +33,8 @@ class classCompoRouter extends Component {
                         <Route path='/classcompolistkeymapexample' element={<ClassCompoListKeyMapExample />} />
                         <Route path='/classcompolistkeymapexample' element={<ClassCompoListKeyMapExample />} />
                         <Route path='/classcompodynamicsubmenu' element={<ClassCompoDynamicSubMenu />} />
+                        <Route path='/classcompospreadrest' element={<ClassCompoSpreadRest />} />
+                        <Route path='/classcompocontrolledcompo' element={<ClassCompoControlledCompo />} />
                     </Route>
                 </Routes>
             </>

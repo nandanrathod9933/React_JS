@@ -17,6 +17,8 @@ class ClassCompoMenu extends Component {
                     <li className='h4 text-capitalize'> <Link to='classcompolistkeymap'>class compoent List Key Map</Link> </li>
                     <li className='h4 text-capitalize'> <Link to='classcompolistkeymapexample'>class compoent List Key Map Example </Link> </li>
                     <li className='h4 text-capitalize'> <Link to='classcompodynamicsubmenu'>class compoent Dynamic Submenu </Link> </li>
+                    <li className='h4 text-capitalize'> <Link to='classcompospreadrest'>class compoent spread rest </Link> </li>
+                    <li className='h4 text-capitalize'> <Link to='classcompocontrolledcompo'>class compoent Controlled Compo </Link> </li>
                 </ul>
                 <div className="row">
                     <div className="col-12 ">
