@@ -24,6 +24,7 @@ class headernew extends Component {
             { path: `/`, name: "Home" },
             { path: `/about`, name: "About" },
             { path: `/examples`, name: "Example" },
+            { path: `/contact`, name: "Contact" },
             // { path: `/`, name: "vivek" },
             // { path: `/`, name: "kaushikbhai" },
         ]
