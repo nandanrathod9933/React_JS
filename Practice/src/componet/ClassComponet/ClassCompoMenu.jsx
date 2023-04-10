@@ -19,6 +19,11 @@ class ClassCompoMenu extends Component {
                     <li className='h4 text-capitalize'> <Link to='classcompodynamicsubmenu'>class compoent Dynamic Submenu </Link> </li>
                     <li className='h4 text-capitalize'> <Link to='classcompospreadrest'>class compoent spread rest </Link> </li>
                     <li className='h4 text-capitalize'> <Link to='classcompocontrolledcompo'>class compoent Controlled Compo </Link> </li>
+                    <li className='h4 text-capitalize'> <Link to='classcompocontrolledcompoobject'>class compoent Controlled Compo Object</Link> </li>
+                    <li className='h4 text-capitalize'> <Link to='classcompouncontrolledcompo'>class compoent Uncontrolled Compo </Link> </li>
+                    <li className='h4 text-capitalize'> <Link to='classcompocompositionvsinheritance'>class compoent Composition Vs Inheritance </Link> </li>
+                    <li className='h4 text-capitalize'> <Link to='classcompocompostatelifting'>class compoent state lifting </Link> </li>
+                    <li className='h4 text-capitalize'> <Link to='classcompocompostateliftingexample'>class compoent state lifting Example</Link> </li>
                 </ul>
                 <div className="row">
                     <div className="col-12 ">

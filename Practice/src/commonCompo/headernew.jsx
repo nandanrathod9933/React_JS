@@ -37,7 +37,7 @@ class headernew extends Component {
         })
         return (
             <>
-                <MDBNavbar expand='lg' light bgColor='white' className="fixed-top">
+                <MDBNavbar expand='lg' light bgColor='white' className="sticky-top">
                     <MDBContainer fluid>
 
                         <MDBNavbarBrand className='ms-5' href='#'>Nandan</MDBNavbarBrand>
