@@ -19,6 +19,8 @@ import ClassCompoUnControlledCompo from "./16ClassCompoUnControlledCompo.jsx"
 import ClassCompoCompositionVsInheritance from "./17ClassCompoCompositionVsInheritance..jsx"
 import ClassCompoStateLifting from "./19ClassCompoStateLifting/01Mainfile.jsx"
 import ClassCompoStateLiftingExample from "./19ClassCompoStateLifting/mainfile.jsx"
+import ClassCompoHOC from "./20HOCINClassCompo/01MainCompo.jsx"
+import FetchAPI from "./21FetchAPI.jsx"
 
 class classCompoRouter extends Component {
     render() {
@@ -45,6 +47,8 @@ class classCompoRouter extends Component {
                         <Route path='/classcompocompositionvsinheritance' element={<ClassCompoCompositionVsInheritance />} />
                         <Route path='/classcompocompostatelifting' element={<ClassCompoStateLifting />} />
                         <Route path='/classcompocompostateliftingexample' element={<ClassCompoStateLiftingExample />} />
+                        <Route path='/classcompohoc' element={<ClassCompoHOC />} />
+                        <Route path='/fetchapi' element={<FetchAPI />} />
                     </Route>
                 </Routes>
             </>

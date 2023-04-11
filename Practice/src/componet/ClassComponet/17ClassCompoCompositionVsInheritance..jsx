@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CompositionChild from './18CompositionChild'
-import { Link } from 'react-router-dom';
 
 class ClassCompoCompositionVsInheritance extends Component {
     render() {

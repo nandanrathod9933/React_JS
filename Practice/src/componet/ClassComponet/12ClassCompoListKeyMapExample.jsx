@@ -23,7 +23,7 @@ class ClassCompoListKeyMapExample extends Component {
         // const mapdata = data.map((data, index) => { return <MDBNavbarItem key={index}><Link className='nav-link' to="/">{data} </Link></MDBNavbarItem> })
         // const data = [<Link className='nav-link' to="/">home</Link>, <Link className='nav-link' to="/about">about</Link>];
         // const mapdata = data.map((dt, index) => { return <MDBNavbarItem key={index}>{dt}</MDBNavbarItem> })
-        const data = [{ key: `/`, value: "Home" }, { key: `/about`, value: "About" }]
+        const data = [{ key: `/`, value: "Home" }, { key: `/about`, value: "About" }, { key: `/example`, value: "example" }]
         const mapdata = data.map(({ key, value }, index) => { return <MDBNavbarItem key={index}><Link className='nav-link' to={key}>{value} </Link></MDBNavbarItem> })
         return (
             <>

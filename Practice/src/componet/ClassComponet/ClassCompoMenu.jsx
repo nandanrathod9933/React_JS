@@ -24,6 +24,8 @@ class ClassCompoMenu extends Component {
                     <li className='h4 text-capitalize'> <Link to='classcompocompositionvsinheritance'>class compoent Composition Vs Inheritance </Link> </li>
                     <li className='h4 text-capitalize'> <Link to='classcompocompostatelifting'>class compoent state lifting </Link> </li>
                     <li className='h4 text-capitalize'> <Link to='classcompocompostateliftingexample'>class compoent state lifting Example</Link> </li>
+                    <li className='h4 text-capitalize'> <Link to='classcompohoc'>class compoent HOC</Link> </li>
+                    <li className='h4 text-capitalize'> <Link to='fetchapi'>class compoent fetchAPI</Link> </li>
                 </ul>
                 <div className="row">
                     <div className="col-12 ">
