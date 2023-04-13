@@ -1,13 +1,56 @@
 import React, { Component } from 'react';
 import CustomCardStrcutre from './06CustomCardStrcutre'
 import tataharrier from './tataharrier.jpeg'
-
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { monokai } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 class ClassCompoProse extends Component {
     render() {
- 
+        const codeString1 = `
+        import React from 'react';  
+        import ReactDOM from 'react-dom';  
+        import App from './App.js';  
+  
+        ReactDOM.render(<App name = "Nandan!!" />, document.getElementById('app'));  
+        `
+        const codeString = `
+        import React, { Component } from 'react';
+        class App extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <h1> Welcome to {this.props.name} </h1>
+                        <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloremque aut corrupti?</P>
+                    </div>
+                );
+            }
+        }
+        export default App; 
+        
+        `;
+
         return (
             <>
+
+                <h2>React Props</h2>
+                <p> React Props are like function arguments in JavaScript and attributes in HTML.</p>
+                <p>  To send props into a component, use the same syntax as HTML attributes:</p>
+                <p>Parents mathi data Child ma data as a attribute ni jem lai jase </p>
+                <p>props means ke attribute ni andar tag ni value pass karvi </p>
+                <h4>Syntax:</h4>
+                <div>
+                    <h5>Parents compoent</h5>
+                    <SyntaxHighlighter className="rounded-5" language="jsx" style={monokai}>
+                        {codeString1}
+                    </SyntaxHighlighter>
+                    <h5>Child compoent</h5>
+                    <SyntaxHighlighter className="rounded-5" language="jsx" style={monokai}>
+                        {codeString}
+                    </SyntaxHighlighter>
+                </div>
+
+
+                <h4>Example:</h4>
                 <div className="row mt-5">
                     <div className="col-3">
                         {/* prose means ke tag ni value ne attribute ma save karse  */}
@@ -33,3 +76,4 @@ class ClassCompoProse extends Component {
 }
 
 export default ClassCompoProse;
+

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDarkReasonable } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 class ClassCompoConstructor extends Component {
+  
 
 
     constructor(props) {

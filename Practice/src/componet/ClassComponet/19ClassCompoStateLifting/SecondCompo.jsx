@@ -13,7 +13,7 @@ class SecondCompo extends Component {
         // console.log("called inputInsideChildCompo", e.target.value);
         // this.setState({ childdata: e.target.value })
         // console.log(fromChild);
-        this.props.fromSecondCompo(fromChild * 82)
+        this.props.fromSecondCompo(fromChild * 82 + "")
     }
     render() {
         return (
