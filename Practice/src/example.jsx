@@ -8,12 +8,12 @@ class example extends Component {
             <div className='container mt-5'>
                 <div className="row ">
                     <div className="col">
-                        <h2 className='text-center display-5'>Example Component</h2>
+                        <h2 className='text-center display-5   '>  Example Component</h2>
                     </div>
                 </div>
                 <div className="row mt-3">
                     <div className="col-6">
-                        <h3 className='text-center display-6'>
+                        <h3 className='text-center display-6 '>
                             <Link to="classcompo "  >Class Component</Link>
                         </h3>
 

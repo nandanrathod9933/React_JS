@@ -4,7 +4,7 @@ import HeaderCompo from "./commonCompo/headernew";
 import HomeCompo from "./Home"
 import AboutCompo from "./About.jsx"
 import Examples from "./example"
-import ContactCompo from "./ContactCompo.jsx"
+import Product from "./Product"
 import ErrorPage from "./ErrorPage.jsx"
 import React, { Suspense } from "react";
 
@@ -23,8 +23,8 @@ const MainRouter = createBrowserRouter([
         element: <> <HeaderCompo /><AboutCompo /></>,
     },
     {
-        path: "/contact",
-        element: <> <HeaderCompo /><ContactCompo /></>,
+        path: "/product",
+        element: <> <HeaderCompo /><Product /></>,
     },
 
     {

@@ -24,7 +24,7 @@ class headernew extends Component {
             { path: `/`, name: "Home" },
             { path: `/about`, name: "About" },
             { path: `/examples`, name: "Example" },
-            { path: `/contact`, name: "Contact" },
+            { path: `/product`, name: "Product" },
             // { path: `/`, name: "vivek" },
             // { path: `/`, name: "kaushikbhai" },
         ]
@@ -37,7 +37,7 @@ class headernew extends Component {
         })
         return (
             <>
-                <MDBNavbar expand='lg' light bgColor='white' className="sticky-top">
+                <MDBNavbar expand='lg' light bgColor='white' className="sticky-top" >
                     <MDBContainer fluid>
 
                         <MDBNavbarBrand className='ms-5' href='#'>Nandan</MDBNavbarBrand>

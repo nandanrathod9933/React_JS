@@ -74,7 +74,7 @@ class ClassCompoControlledCompoObject extends Component {
                                             return (
                                                 <tr className='table-secondary' key={index}>
                                                     <td className=' text-capitalize'>{key}</td>
-                                                    <td>{value}</td>
+                           z                         <td>{value}</td>
                                                 </tr>
                                             );
                                         })}
