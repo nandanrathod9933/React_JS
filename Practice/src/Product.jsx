@@ -6,17 +6,17 @@ class Product extends Component {
         return (
             <>
 
-            
+
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-4">
-                            <ProductCard></ProductCard>
+                            <ProductCard price="39999"></ProductCard>
                         </div>
                         <div className="col-lg-4">
-                            <ProductCard></ProductCard>
+                            <ProductCard price="44999"></ProductCard>
                         </div>
                         <div className="col-lg-4">
-                            <ProductCard></ProductCard>
+                            <ProductCard price="49999"></ProductCard>
                         </div>
                     </div>
                 </div>

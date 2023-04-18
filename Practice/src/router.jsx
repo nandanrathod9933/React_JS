@@ -10,8 +10,7 @@ import React, { Suspense } from "react";
 
 // const ClassCompoRoute = React.lazy(() => { return import('./componet/ClassComponet/ClassCompoRouter') })
 const ClassCompoRoute = React.lazy(() => import('./componet/ClassComponet/ClassCompoRouter'))
-// errorElement: <ErrorPage />,
-
+const FunctionalCompoRoute = React.lazy(() => import('./componet/FunctionalComponet/FunctionalCompoRouter.jsx'))
 const MainRouter = createBrowserRouter([
     {
         path: "/",
@@ -34,6 +33,10 @@ const MainRouter = createBrowserRouter([
             {
                 path: "classcompo/*",
                 element: <Suspense fallback={<><div className="spinner"></div></>}><ClassCompoRoute /></Suspense>,
+            },
+            {
+                path: "functionalcompo/*",
+                element: <Suspense fallback={<><div className="spinner"></div></>}><FunctionalCompoRoute /></Suspense>,
             }
         ]
     },

@@ -16,25 +16,38 @@ import { Link } from 'react-router-dom';
 class ProductCard extends Component {
     constructor(props) {
         super(props);
-        this.state = { proudtdata: { productname: undefined, productprice: undefined }, count: 0, productamount: 0, buttonvalue: "Add to cart", }
+        this.state = { proudtdata: { productname: undefined, productprice: undefined }, count: 0, productamount: 0, buttonvalue: "Add to cart", active: false, buy: "Buy Now" }
 
-        this.productname = React.createRef();
-        this.productprice = React.createRef();
+        this.productnameref = React.createRef();
+        this.productpriceref = React.createRef();
         // this.productimage = React.createRef();
     }
 
+    buybtn = () => {
+        let confirmBox = window.confirm(
+            "confirmation of  your order"
+        )
+        if (confirmBox === true) {
+            this.setState({ buy: "Order Place" })
+        } else {
+            this.setState({ buy: "buy now" })
+
+        }
+    }
 
     cardvalue = (event) => {
+        this.setState({ active: true })
         console.log("called");
         console.log(this.state.buttonvalue);
         this.setState({ buttonvalue: "go to card" })
         // event.currentTarget.disabled = true;
-        console.log(this.productname.current.text);
-        this.setState({ proudtdata: { productname: this.productname.current.text, productprice: parseFloat(this.productprice.current.text) } })
+        // console.log(this.productname.current.text);
+        this.setState({ proudtdata: { productname: this.productnameref.current.text, productprice: parseFloat(this.productpriceref.current.text) } })
 
-        this.setState({ productamount: parseFloat(this.productprice.current.text) })
+        this.setState({ productamount: parseFloat(this.productpriceref.current.text) })
 
         this.setState({ count: this.state.count + 1 })
+
     }
     increaseprice = () => {
         console.log("called increaseprice");
@@ -57,7 +70,7 @@ class ProductCard extends Component {
 
 
     render() {
-
+        let btn_class = this.state.active ? "d-block" : "d-none"
         return (
             <>
                 <MDBContainer fluid className="my-5">
@@ -87,7 +100,7 @@ class ProductCard extends Component {
                                     <div className="d-flex justify-content-between">
                                         <div>
                                             <p >
-                                                <a href="#!" className="text-dark" ref={this.productname} >
+                                                <a href="#!" className="text-dark" ref={this.productnameref} >
                                                     Dell Xtreme 270
                                                 </a>
                                             </p>
@@ -109,8 +122,8 @@ class ProductCard extends Component {
                                     <div className="d-flex justify-content-between">
                                         <p>
                                             ₹
-                                            <a href="#!" className="text-dark" ref={this.productprice} >
-                                                39999
+                                            <a href="#!" className="text-dark" ref={this.productpriceref} >
+                                                {this.props.price}
                                             </a>
                                         </p>
                                         <p className="text-dark">#### 8787</p>
@@ -123,7 +136,7 @@ class ProductCard extends Component {
                                         <Link>
                                             <MDBBtn color="primary" onClick={this.cardvalue}>{this.state.buttonvalue} </MDBBtn>
                                         </Link>
-                                        <MDBBtn color="primary">Buy now</MDBBtn>
+                                        <MDBBtn color="primary" onClick={this.buybtn}>{this.state.buy}</MDBBtn>
                                     </div>
                                 </MDBCardBody>
                             </MDBCard>
@@ -132,29 +145,32 @@ class ProductCard extends Component {
                 </MDBContainer >
 
 
-                <div className="container">
+                <div className={btn_class}>
+                    <div className="container">
 
-                    <div className="row my-5">
-                        <div className="col-lg-12 ">
-                            <div className="row">
-                                <div className="col-lg-6">
-                                    {JSON.stringify(this.state.proudtdata.productname)}
-                                </div>
-                                <div className="col-lg-6">
-                                    {JSON.stringify(this.state.productamount)}
-                                    {/* {JSON.stringify(this.state.proudtdata.productprice)} */}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <div className="row my-5">
+                            <div className="col-lg-12 ">
+                                <div className="row">
+                                    <div className="col-lg-6">
+                                        {JSON.stringify(this.state.proudtdata.productname)}
+                                    </div>
+                                    <div className="col-lg-6">
+                                        {JSON.stringify(this.state.productamount)}
+                                        {/* {JSON.stringify(this.state.proudtdata.productprice)} */}
+                                    </div >
+                                </div >
+                            </div >
+                        </div >
 
 
-                    <div className=" d-flex justify-content-between align-items-xxl-center my-5">
-                        <MDBBtn onClick={this.increaseprice} className='d-block'>  + </MDBBtn>
-                        <MDBBtn> {JSON.stringify(this.state.count)}   </MDBBtn>
-                        <MDBBtn onClick={this.decreaseprice} className='d-block '>  -  </MDBBtn>
+                        <div className=" d-flex justify-content-between align-items-xxl-center my-5">
+                            <MDBBtn onClick={this.increaseprice} className='d-block'>  + </MDBBtn>
+                            <MDBBtn> {JSON.stringify(this.state.count)}   </MDBBtn>
+                            <MDBBtn onClick={this.decreaseprice} className='d-block '>  -  </MDBBtn>
+                        </div >
                     </div >
-                </div >
+                </div>
+
 
             </>
         );

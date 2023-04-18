@@ -44,3 +44,4 @@ class FetchAPI extends Component {
 }
 
 export default FetchAPI;
+

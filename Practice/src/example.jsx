@@ -19,7 +19,9 @@ class example extends Component {
 
                     </div>
                     <div className="col-6">
-                        <h3 className='text-center display-6'>Functional Component </h3>
+                        <h3 className='text-center display-6'>
+                            <Link to="functionalcompo"> Functional Component</Link>
+                        </h3>
                     </div>
                 </div>
                 <div className="row my-3">
