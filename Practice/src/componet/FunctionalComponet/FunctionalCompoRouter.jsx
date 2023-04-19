@@ -4,6 +4,7 @@ import FunctionalCompoMenu from './FunctionalCompoMenu.jsx'
 import WelcomeToFunctionalCompo from './01WelcomeToFunctionalCompo.jsx'
 import FunctionalCompoState from './02FunctionalCompoState.jsx'
 import FunctionalCompoUseEffect from './03FunctionalCompoUseEffect.jsx'
+import FunctionalCompoUseLayoutEffect from './04FunctionalCompoUseLayoutEffect.jsx'
 
 const FunctionalCompoRouter = () => {
     return (
@@ -13,6 +14,7 @@ const FunctionalCompoRouter = () => {
                     <Route path='/welcometofunctionalcompo' element={<WelcomeToFunctionalCompo />} />
                     <Route path='/functionalcompostate' element={<FunctionalCompoState />} />
                     <Route path='/functionalcompouseeffect' element={<FunctionalCompoUseEffect />} />
+                    <Route path='/functionalcompouselayouteffect' element={<FunctionalCompoUseLayoutEffect />} />
 
                 </Route>
 

@@ -21,6 +21,8 @@ const FunctionalCompoUseEffect = () => {
         <>
             <h2>UseEffect</h2>
             <p> useEffect(callback, dependencies) is the hook that manages the side-effects in functional components. callback argument is a function where to put the side-effect logic. dependencies is a list of dependencies of your side-effect: being props or state values</p>
+            <p>component ak var render thai jai pachi su karvu che ae useEffect thi batavi sakiye</p>
+            <p>useEffect : jyare component painted (jyare page render)thai  pachi batavse </p>
             <div className="row border my-5">
                 <div className="col-lg-6 border">
                     <img style={{ width: "600px", margin: "0 auto", display: "block" }} className='text-center' src={process.env.PUBLIC_URL + '/img/useeffect.png'} alt="" />

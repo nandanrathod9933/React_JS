@@ -5,7 +5,7 @@ class ClassCompoMenu extends Component {
     render() {
         return (
             <>
-                <ul >
+                <ul style={{ width: "78%", margin: "0 auto" }} >
                     <li className='h4 text-capitalize'> <Link to='classcompointro'>class compoent intro</Link> </li>
                     <li className='h4 text-capitalize'> <Link to='classcompojsx'>class compoent JSX</Link> </li>
                     <li className='h4 text-capitalize'> <Link to='classcompoconstructor'>class compoent Constructor</Link> </li>
