@@ -13,7 +13,6 @@ const FunctionalCompoUseEffect = () => {
         console.log("btn");
         setname(!statename)
         console.log(JSON.stringify(statename));
-
     }
 
     return (

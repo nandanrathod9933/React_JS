@@ -13,6 +13,8 @@ class ClassCompoControlledCompoObject extends Component {
             formdata: { ...data.formdata, [event.target.name]: event.target.value }
         }))
     }
+
+
     sumbit = (event) => {
         event.preventDefault()
         console.log(this.state);
@@ -74,7 +76,7 @@ class ClassCompoControlledCompoObject extends Component {
                                             return (
                                                 <tr className='table-secondary' key={index}>
                                                     <td className=' text-capitalize'>{key}</td>
-                           z                         <td>{value}</td>
+                                                    z                         <td>{value}</td>
                                                 </tr>
                                             );
                                         })}
