@@ -6,6 +6,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import HeaderCom from './commonCompo/header';
 import ComponetData from './01Componet';
 import MainRouter from './router';
+import "./index.css"
 
 
 

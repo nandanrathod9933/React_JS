@@ -6,7 +6,6 @@ const FunctionalCompoState = () => {
     // const [stateNameAnything, setStateData] = useState("nandan") // string value
     // const [stateNameAnything, setStateData] = useState(0) // number data 
     const [stateNameAnything, setStateData] = useState(true) // boolean value
-
     const btnclick = () => {
         console.log("called");
         // setStateData(stateNameAnything + 1) // jyare string ma value pase kari hase tyare baju ma lakhase add nahi thai te value ma  (0111111)
