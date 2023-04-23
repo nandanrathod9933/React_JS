@@ -36,8 +36,8 @@ const FunctionalCompoUseLayoutEffect = () => {
             <p>the useEffect hook serves asynchronously, whereas the useLayoutEffect hook works synchronously. </p>
             <p>the useLayoutEffect actually runs before the useEffect runs</p>
             {state}
-            <MDBBtn onClick={btnclick}>click</MDBBtn>
-            <MDBBtn onClick={btnclick2}>click</MDBBtn>
+            <MDBBtn onClick={btnclick}>click useEffect</MDBBtn> <br />
+            <MDBBtn onClick={btnclick2} className='mt-3'>click</MDBBtn>
         </>
     );
 };

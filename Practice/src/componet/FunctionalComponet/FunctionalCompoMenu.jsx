@@ -12,6 +12,7 @@ const FunctionalCompoMenu = () => {
                         <li className='h4 text-capitalize'> <Link to='functionalcompouseeffect'>functional compo UseEffect</Link> </li>
                         <li className='h4 text-capitalize'> <Link to='functionalcompouseeffectexample'>functional compo UseEffect example</Link> </li>
                         <li className='h4 text-capitalize'> <Link to='functionalcompouselayouteffect'>functional compo UseLayoutEffect</Link> </li>
+                        <li className='h4 text-capitalize'> <Link to='functionalcompousecallback'>functional compo UseCallback</Link> </li>
                     </ul>
                 </div>
             </div>
