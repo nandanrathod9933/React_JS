@@ -41,3 +41,85 @@
     color: #fff;
     text-align: center;
 }
+
+.nandan-dark {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid white;
+    padding: 10px;
+}
+
+.nandan-light {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+
+
+
+
+.wrapper {
+    margin: 10px 0;
+}
+
+.wrapper input {
+    display: flex;
+    appearance: none;
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2) inset, 0 1px 1px 1px rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    background-color: rgba(128, 128, 128, 0.724);
+    /* background: linear-gradient(to right, #900 25%, transparent 25%, transparent 75%, #090 75%, #090 100%), linear-gradient(to bottom, #555, #876); */
+    background-size: 200% 100%, 100% 100%;
+    background-blend-mode: soft-light;
+}
+
+.wrapper input::before,
+.wrapper input::after {
+    display: flex;
+    position: relative;
+    font-size: 12px;
+    line-height: 1.25;
+    margin: 0.5rem;
+}
+
+.wrapper input::before {
+    content: 'Light';
+}
+
+.wrapper input::after {
+    content: 'Dark';
+}
+
+.wrapper input:not(:checked) {
+    background-position: 0 0;
+    transition: all 250ms ease-out;
+}
+
+.wrapper input:not(:checked)::before {
+    color: #fff;
+    text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.25);
+    transition: all 75ms ease-in 100ms;
+}
+
+.wrapper input:not(:checked)::after {
+    color: rgba(255, 255, 255, 0.4);
+    transition: all 75ms ease-in 100ms;
+}
+
+.wrapper input:checked {
+    background-position: 100% 0;
+    transition: all 150ms ease-in;
+}
+
+.wrapper input:checked::before {
+    color: rgba(255, 255, 255, 0.4);
+    transition: all 75ms ease-in 100ms;
+}
+
+.wrapper input:checked::after {
+    color: #000;
+    text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.25);
+    transition: all 75ms ease-in 100ms;
+}

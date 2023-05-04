@@ -13,6 +13,9 @@ const FunctionalCompoMenu = () => {
                         <li className='h4 text-capitalize'> <Link to='functionalcompouseeffectexample'>functional compo UseEffect example</Link> </li>
                         <li className='h4 text-capitalize'> <Link to='functionalcompouselayouteffect'>functional compo UseLayoutEffect</Link> </li>
                         <li className='h4 text-capitalize'> <Link to='functionalcompousecallback'>functional compo UseCallback</Link> </li>
+                        <li className='h4 text-capitalize'> <Link to='functionalcompousememo'>functional compo usememo</Link> </li>
+                        <li className='h4 text-capitalize'> <Link to='functionalcompousecontext'>functional compo usecontext</Link> </li>
+                        <li className='h4 text-capitalize'> <Link to='functionalcompousereducer'>functional compo usereducer</Link> </li>
                     </ul>
                 </div>
             </div>
