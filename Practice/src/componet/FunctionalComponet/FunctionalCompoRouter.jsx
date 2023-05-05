@@ -10,6 +10,7 @@ import FunctionalCompoUseCallback from './05FunctionalCompoUseCallback.jsx'
 import FunctionalCompoUseMemo from './06FunctionalCompoUseMemo.jsx'
 import FunctionalCompoUseContext from './07UseContext/FunctionalCompoUseContext.jsx'
 import FunctionalCompoUseReducer from './08FunctionalCompoUseReducer.jsx'
+import FunctionalCompoUseRef from './09FunctionalCompoUseRef.jsx'
 
 const FunctionalCompoRouter = () => {
     return (
@@ -25,6 +26,7 @@ const FunctionalCompoRouter = () => {
                     <Route path='/functionalcompousememo' element={<FunctionalCompoUseMemo />} />
                     <Route path='/functionalcompousecontext' element={<FunctionalCompoUseContext />} />
                     <Route path='/functionalcompousereducer' element={<FunctionalCompoUseReducer />} />
+                    <Route path='/functionalcompouseref' element={<FunctionalCompoUseRef />} />
 
                 </Route>
 
