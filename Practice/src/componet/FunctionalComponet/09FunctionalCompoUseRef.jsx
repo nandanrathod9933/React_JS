@@ -1,9 +1,9 @@
 import { MDBBtn } from 'mdb-react-ui-kit';
-import React, { Fragment, useRef, useState } from 'react';
+import React, {useRef, useState } from 'react';
 
 const FunctionalCompoUseRef = () => {
     // Creating a ref object using useRef hook
-    const [state, setstate] = useState()
+    const [state, setstate] = useState();
     const focusPoint = useRef(null);
     const DataPoint = useRef(null);
     const onClickHandler = () => {

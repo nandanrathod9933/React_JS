@@ -17,6 +17,7 @@ const FunctionalCompoMenu = () => {
                         <li className='h4 text-capitalize'> <Link to='functionalcompousecontext'>functional compo usecontext</Link> </li>
                         <li className='h4 text-capitalize'> <Link to='functionalcompousereducer'>functional compo usereducer</Link> </li>
                         <li className='h4 text-capitalize'> <Link to='functionalcompouseref'>functional compo useref</Link> </li>
+                        <li className='h4 text-capitalize'> <Link to='functionalcompouseimperativehandle'>functional compo useImperativeHandle</Link> </li>
                     </ul>
                 </div>
             </div>
