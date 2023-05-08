@@ -12,6 +12,7 @@ import FunctionalCompoUseContext from './07UseContext/FunctionalCompoUseContext.
 import FunctionalCompoUseReducer from './08FunctionalCompoUseReducer.jsx'
 import FunctionalCompoUseRef from './09FunctionalCompoUseRef.jsx'
 import FunctionalCompoUseImperativeHandle from './10FunctionalCompoUseImperativeHandle.jsx'
+import FunctionalCompoTodolist from './11FunctionalCompoTodolist.jsx'
 
 const FunctionalCompoRouter = () => {
     return (
@@ -29,6 +30,7 @@ const FunctionalCompoRouter = () => {
                     <Route path='/functionalcompousereducer' element={<FunctionalCompoUseReducer />} />
                     <Route path='/functionalcompouseref' element={<FunctionalCompoUseRef />} />
                     <Route path='/functionalcompouseimperativehandle' element={<FunctionalCompoUseImperativeHandle />} />
+                    <Route path='/functionalcompotodolist' element={<FunctionalCompoTodolist />} />
 
                 </Route>
 
