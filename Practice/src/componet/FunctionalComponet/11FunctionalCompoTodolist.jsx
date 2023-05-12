@@ -87,6 +87,8 @@ const FunctionalCompoTodolist = () => {
             {toggleBtn ? <button onClick={addItem}>Add</button> : <button onClick={addItem}>update</button>}
             {/* <button onClick={addItem}>Add</button> */}
 
+
+            <h2>list data</h2>
             <ul>
                 {items.map((item) => {
                     return (
