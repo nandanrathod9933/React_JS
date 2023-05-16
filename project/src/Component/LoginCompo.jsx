@@ -59,8 +59,11 @@ const LoginCompo = () => {
                             </div>
                             <span>or use your email for registration</span>
                             <input type="text" className='logininput' onBlur={handleChange} placeholder="Name" id='uname' name='username' />
+                            {errors ? <span>{errors.usernameerror}</span> : <></>}
                             <input type="email" placeholder="Email" onBlur={handleChange} className='logininput' id='uemail' name='useremail' />
+                            {errors ? <span>{errors.useremailerror}</span> : <></>}
                             <input type="password" placeholder="Password" onBlur={handleChange} className='logininput' id='upass' name='userpassword' />
+                            {errors ? <span>{errors.useremailerror}</span> : <></>}
                             <button >Sign Up</button>
                         </form>
                     </div>

@@ -38,10 +38,6 @@ const CustomHook = (intval, initError) => {
                 }
             }
         }
-
-
-
-
     }
     return {
         handleChange,

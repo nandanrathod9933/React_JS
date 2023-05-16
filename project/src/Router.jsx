@@ -6,6 +6,7 @@ import HomeCompo from "./Pages/Home.jsx"
 import AboutCompo from "./Pages/About.jsx"
 import ContactCompo from "./Pages/Contact.jsx"
 import LoginPage from "./Component/LoginCompo.jsx"
+import APIExample from "./Component/ApiExample.jsx"
 
 
 // import ErrorPage from "./ErrorPage.jsx"
@@ -27,6 +28,10 @@ const Router = createBrowserRouter([
     {
         path: "/loginpage",
         element: <> <LoginPage /></>,
+    },
+    {
+        path: "/apiexample",
+        element: <><HeaderCompo /> <APIExample /></>,
     },
 
 
