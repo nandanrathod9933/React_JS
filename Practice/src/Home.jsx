@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductCard from './style/ProductCard.jsx'
+import FooterCompo from './commonCompo/footer.jsx'
 
 const Home = () => {
     return (
@@ -24,6 +25,7 @@ const Home = () => {
 
                 <ProductCard modelname="iPad Pro 11-inch" modelprice="81999.00" modelpricetemporary="99999.00" imgsrc={process.env.PUBLIC_URL + '/img/ipadpro11.png'} modeldc="The Apple M2 chip powers a massive leap in performance for pro workflows and all-day battery life¹"></ProductCard>
             </section>
+            <FooterCompo />
         </>
     );
 };
