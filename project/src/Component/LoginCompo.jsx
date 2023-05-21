@@ -17,6 +17,19 @@ const LoginCompo = () => {
     }
 
 
+    const logindata = (event) => {
+        event.preventDefault()
+
+    }
+    const registrationdata = (event) => {
+        event.preventDefault()
+        console.log("called");
+    }
+
+
+
+
+
 
 
     // useEffect(() => {
@@ -31,7 +44,7 @@ const LoginCompo = () => {
                 <Link to="/" className='home_link'><i className="fa-solid fa-2x fa-house"></i></Link>
                 <div className={btnclick ? "container  right-panel-active " : "container"} id="container">
                     <div className="form-container sign-in-container">
-                        <form>
+                        <form method='post' onSubmit={logindata}>
                             <h1>Sign In</h1>
                             {/* {JSON.stringify(inp)} */}
                             {/* {JSON.stringify(errors)} */}
@@ -46,11 +59,11 @@ const LoginCompo = () => {
                             <input type="password" placeholder="Password" onBlur={handleChange} className='logininput' id='lpassword' name='password' />
                             {errors ? <span>{errors.passworderror}</span> : <></>}
                             <a href="#">Forgot your password?</a>
-                            <button >Sign In</button>
+                            <button type='submit'>Sign In</button>
                         </form>
                     </div>
                     <div className="form-container sign-up-container">
-                        <form>
+                        <form method='post' onSubmit={registrationdata}>
                             <h1>Sign Up</h1>
                             <div className="social-container">
                                 <a href="#" className="social"><i className="fab fa-facebook"></i></a>

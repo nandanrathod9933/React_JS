@@ -127,11 +127,17 @@
     margin: 8px 0;
     width: 100%;
     font-family: inherit;
+    border: none;
+    outline: none;
 }
 
-.login_sec input:invalid {
-    border-color: red;
+/* .login_sec input[type=email]:invalid {
+    border: 1px solid red;
 }
+
+.login_sec input[type=email]:valid {
+    border: 1px solid green;
+} */
 
 .login_sec .container {
     background-color: #fff;

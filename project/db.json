@@ -1,0 +1,82 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Satheesh",
+      "email": "Sat@mail.com",
+      "adderss": "South street"
+    },
+    {
+      "id": 2,
+      "name": "John",
+      "email": "john@mail.com",
+      "adderss": "North street"
+    },
+    {
+      "id": 3,
+      "name": "Robert",
+      "email": "robert@mail.com",
+      "adderss": "East street"
+    },
+    {
+      "id": 4,
+      "name": "Mani",
+      "email": "mani@mail.com",
+      "adderss": "West street"
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "userdata": [
+    {
+      "id": 1,
+      "name": "Satheesh",
+      "email": "Sat@mail.com",
+      "password": "satesh!@#33"
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 4,
+      "name": "Satheesh44",
+      "email": "Sa44t@mail.com",
+      "password": "satesh!@#3443"
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    }
+  ]
+}

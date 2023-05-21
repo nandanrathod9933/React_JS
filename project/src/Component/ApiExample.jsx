@@ -61,9 +61,48 @@
 
 
 
-// 
+//
 
 
+
+
+// import React, { useEffect, useState } from 'react';
+
+// const ApiExample = () => {
+//     const [apidata, setApiData] = useState()
+//     const [loading, setLoading] = useState(false)
+//     useEffect(() => {
+//         storeData()
+//     }, [])
+
+//     const storeData = async () => {
+//         const nandan = await fetch("https://jsonplaceholder.typicode.com/todos").then(response => {
+//             return response.json()
+//         }).then(data => {
+//             // console.log(data);
+//             setApiData(data)
+//             setLoading(true)
+//         })
+//     }
+
+//     let fetchUserData = ""
+//     if (loading) {
+//         fetchUserData = Object.entries(apidata).map(([key, value]) => {
+//             // return console.log(result);
+//             return <li key={key}>{value.title}</li>
+//         })
+//     } else {
+//         fetchUserData = ""
+//     }
+
+//     return (
+//         <>
+//             {fetchUserData}
+//         </>
+//     );
+// };
+
+// export default ApiExample;
 
 
 import React, { useEffect, useState } from 'react';
@@ -71,13 +110,17 @@ import React, { useEffect, useState } from 'react';
 const ApiExample = () => {
     const [apidata, setApiData] = useState()
     const [loading, setLoading] = useState(false)
+
+
+
     useEffect(() => {
-        storeData()
+        apiFetch();
     }, [])
 
-    const storeData = async () => {
-        const nandan = await fetch("https://jsonplaceholder.typicode.com/todos").then(response => {
-            return response.json()
+    const apiFetch = async () => {
+        const response = await fetch("https://jsonplaceholder.typicode.com/todos").then(response => {
+
+            return response.json();
         }).then(data => {
             // console.log(data);
             setApiData(data)
@@ -88,12 +131,13 @@ const ApiExample = () => {
     let fetchUserData = ""
     if (loading) {
         fetchUserData = Object.entries(apidata).map(([key, value]) => {
-            // return console.log(result);
             return <li key={key}>{value.title}</li>
         })
+
     } else {
         fetchUserData = ""
     }
+
 
     return (
         <>
