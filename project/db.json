@@ -29,15 +29,6 @@
     },
     {
       "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
     }
   ],
   "comments": [
@@ -52,31 +43,17 @@
   },
   "userdata": [
     {
-      "id": 1,
-      "name": "Satheesh",
-      "email": "Sat@mail.com",
-      "password": "satesh!@#33"
+      "name": "nandan9933",
+      "email": "test@test.com",
+      "password": "123",
+      "id": 1
     },
     {
+      "role": "2",
+      "email": "akshpateltop@gmail.com",
+      "name": "aksh",
+      "password": "akshpateltop@",
       "id": 2
-    },
-    {
-      "id": 4,
-      "name": "Satheesh44",
-      "email": "Sa44t@mail.com",
-      "password": "satesh!@#3443"
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
     }
   ]
 }

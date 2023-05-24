@@ -39,10 +39,17 @@ const CustomHook = (intval, initError) => {
             }
         }
     }
+
+    const sumbitdata = (e) => {
+        console.log("called");
+    }
+
+
     return {
         handleChange,
         inp,
-        errors
+        errors,
+        sumbitdata
 
     }
 };

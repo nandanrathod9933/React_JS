@@ -33,6 +33,14 @@ const Router = createBrowserRouter([
         path: "/apiexample",
         element: <><HeaderCompo /> <APIExample /></>,
     },
+    {
+        path: "/admindashbord",
+        element: <>"welcome to admindashbord"</>,
+    },
+    {
+        path: "/userdashboard",
+        element: <>"welcome to userdashboard"</>,
+    }
 
 
 
