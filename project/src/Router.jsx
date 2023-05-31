@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 // import HeaderCompo from "./commonCompo/header";
 import HeaderCompo from "./Includes/HeaderComponent.jsx";
@@ -10,7 +10,7 @@ import APIExample from "./Component/ApiExample.jsx"
 
 
 // import ErrorPage from "./ErrorPage.jsx"
-
+const AdminRoute = React.lazy(() => import('./Admin/AdminRoute.jsx'))
 const Router = createBrowserRouter([
     {
         path: "/",
@@ -34,12 +34,12 @@ const Router = createBrowserRouter([
         element: <><HeaderCompo /> <APIExample /></>,
     },
     {
-        path: "/admindashbord",
-        element: <>"welcome to admindashbord"</>,
-    },
-    {
         path: "/userdashboard",
         element: <>"welcome to userdashboard"</>,
+    },
+    {
+        path: "admin/*",
+        element: <Suspense fallback={<h2>loading.....</h2>}><AdminRoute /></Suspense>,
     }
 
 

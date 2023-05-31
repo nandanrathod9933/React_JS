@@ -6,7 +6,7 @@ import axios from 'axios';
 
 
 const LoginCompo = () => {
-    const { handleChange, inp, errors, sumbitdata } = CustomHook({ role: '2' })
+    const { handleChange, inp, errors } = CustomHook({ role: '2' })
     const [userName, setuserName] = useState('')
     const [userEmail, setuserEmail] = useState('')
     const [userPassword, setuserPassword] = useState('')
@@ -27,7 +27,7 @@ const LoginCompo = () => {
 
         try {
             const response = await axios.get(`http://localhost:5000/userdata?email=${inp.email}&password=${inp.password}`)
-                .then(function (response) {
+                .then((response) => {
                     console.log(response);
                     if (response.status == 200) { //server connecte thai tyare erroe show thase
                         console.log("server connected"); // server connect thai jai to
@@ -35,8 +35,8 @@ const LoginCompo = () => {
                         console.log("error while connecting to the server"); // server connect no thai to
                     }
 
-                    if (response.data[0].role === 1) {
-                        navigate("/admindashbord")
+                    if (response.data[0].role == 1) {
+                        navigate("/admin/admindashboard")
                     } else {
                         navigate("/userdashboard")
                     }
@@ -72,7 +72,7 @@ const LoginCompo = () => {
     const registrationdata = (event) => {
         event.preventDefault()
         console.log("called");
-        // console.log(inp);
+        console.log("loginpage", inp);
 
         // axios.post('http://localhost:5000/userdata', inp).then(function (response) {
         //     console.log(response);
@@ -177,7 +177,7 @@ const LoginCompo = () => {
                                 {errors ? <span>{errors.emailerror}</span> : <></>}
                                 <input type="password" placeholder="Password" onBlur={handleChange} onChange={(e) => setuserPassword(e.target.value)} className='logininput' id='upass' name='password' value={userPassword} />
                                 {errors ? <span>{errors.passworderror}</span> : <></>}
-                                <button type='submit' onClick={sumbitdata} >Sign Up</button>
+                                <button type='submit'  >Sign Up</button>
                             </form>
                         </div>
 

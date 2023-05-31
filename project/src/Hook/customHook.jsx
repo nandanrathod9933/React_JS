@@ -18,6 +18,7 @@ const CustomHook = (intval, initError) => {
         console.log(e.target.type);
 
         setInput((inp) => ({ ...inp, [e.target.name]: e.target.value }))
+        console.log(inp);
         let spanId = e.target.name + "error";
         // console.log(e.target.className);
 
