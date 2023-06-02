@@ -6,7 +6,6 @@ const AdminMenu = () => {
 
     const btnclick = () => {
         setasie(!aside)
-
     }
 
     return (
@@ -32,13 +31,13 @@ const AdminMenu = () => {
                             <div className="flex align-items-center justify-content-between">
                                 <div className="input_box">
                                     <input type="text" className='dash_input' />
-                                    <i class="fa-solid fa-search"></i>
+                                    <i className="fa-solid fa-search"></i>
                                 </div>
                                 <div className="list me-5">
                                     <ul className='mb-0'>
-                                        <li><i class="fa-solid fa-user"></i></li>
-                                        <li><i class="fa-solid fa-house"></i></li>
-                                        <li><i class="fa-solid  fa-bell"></i></li>
+                                        <li><i className="fa-solid fa-user"></i></li>
+                                        <li><i className="fa-solid fa-house"></i></li>
+                                        <li><i className="fa-solid  fa-bell"></i></li>
                                     </ul>
                                 </div>
                             </div>

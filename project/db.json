@@ -62,6 +62,13 @@
       "name": "kaushikbhai",
       "password": "kaushik123",
       "id": 3
+    },
+    {
+      "role": "2",
+      "email": "vivek@gmail.com",
+      "password": "1234",
+      "name": "vivek",
+      "id": 4
     }
   ]
 }

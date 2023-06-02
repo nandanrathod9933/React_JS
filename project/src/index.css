@@ -82,3 +82,12 @@
     display: inline-block;
     padding: 0 5px;
 }
+
+.removebtn {
+    border-radius: none !important;
+    border: none !important;
+    background: transparent !important;
+    color: #000 !important;
+    font-size: 20px !important;
+    padding: 0 !important;
+}

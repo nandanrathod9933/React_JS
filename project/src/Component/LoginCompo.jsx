@@ -3,6 +3,7 @@ import "./01LoginComponent.css"
 import CustomHook from '../Hook/customHook';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useCookies } from 'react-cookie';
 
 
 const LoginCompo = () => {
@@ -10,6 +11,8 @@ const LoginCompo = () => {
     const [userName, setuserName] = useState('')
     const [userEmail, setuserEmail] = useState('')
     const [userPassword, setuserPassword] = useState('')
+    const [loginMsg, setLoginMsg] = useState('')
+    const [cookies, setCookie] = useCookies(['name']);
 
 
     const navigate = useNavigate()
@@ -28,18 +31,30 @@ const LoginCompo = () => {
         try {
             const response = await axios.get(`http://localhost:5000/userdata?email=${inp.email}&password=${inp.password}`)
                 .then((response) => {
-                    console.log(response);
+                    // console.log(response);
                     if (response.status == 200) { //server connecte thai tyare erroe show thase
+
+                        console.log(response);
+                        console.log(response.data);
+                        if (response.data.length > 0) {
+                            setCookie('Name', response.data[0].name);
+                            setCookie('id', response.data[0].id);
+                            if (response.data[0].role == 1) {
+                                // navigate("/admin/admindashboard")
+                            } else {
+                                // navigate("/userdashboard")
+                            }
+                        } else {
+                            setLoginMsg("invalid user");
+                        }
+
+
                         console.log("server connected"); // server connect thai jai to
                     } else {
                         console.log("error while connecting to the server"); // server connect no thai to
                     }
 
-                    if (response.data[0].role == 1) {
-                        navigate("/admin/admindashboard")
-                    } else {
-                        navigate("/userdashboard")
-                    }
+
                 }).catch((error) => {
                     setErrorMsg(true)
                     if (error.response) {
@@ -161,6 +176,17 @@ const LoginCompo = () => {
                                 <a href="#">Forgot your password?</a>
                                 <button type='submit'>Sign In</button>
                             </form>
+                            {loginMsg ? <div className="position-fixed bottom-0 end-0 p-3" style={{ zIndex: "11" }}>
+                                <div id="liveToast" className="toast fade show border border-danger " role="alert" aria-live="assertive" aria-atomic="true">
+                                    <div className="toast-header">
+                                        <strong className="me-auto">login alert</strong>
+                                        <button type="button" data-bs-dismiss="toast" aria-label="Close" className='removebtn' onClick={() => setLoginMsg("")}><i className="fa-solid  fa-xmark"></i></button>
+                                    </div>
+                                    <div className="toast-body ">
+                                        {loginMsg}
+                                    </div>
+                                </div>
+                            </div> : ''}
                         </div>
                         <div className="form-container sign-up-container">
                             <form method='post' onSubmit={registrationdata}>
