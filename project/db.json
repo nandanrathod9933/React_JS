@@ -69,6 +69,13 @@
       "password": "1234",
       "name": "vivek",
       "id": 4
+    },
+    {
+      "role": "2",
+      "name": "dhvanivsaksh",
+      "email": "DvsA@gmail.com",
+      "password": "AloveD",
+      "id": 5
     }
   ]
 }

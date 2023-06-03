@@ -40,9 +40,9 @@ const LoginCompo = () => {
                             setCookie('Name', response.data[0].name);
                             setCookie('id', response.data[0].id);
                             if (response.data[0].role == 1) {
-                                // navigate("/admin/admindashboard")
+                                navigate("/admin/admindashboard")
                             } else {
-                                // navigate("/userdashboard")
+                                navigate("/userdashboard")
                             }
                         } else {
                             setLoginMsg("invalid user");
