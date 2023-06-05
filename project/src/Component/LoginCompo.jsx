@@ -7,7 +7,7 @@ import { useCookies } from 'react-cookie';
 
 
 const LoginCompo = () => {
-    const { handleChange, inp, errors } = CustomHook({ role: '2' })
+    const { handleChange, inp, errors } = CustomHook({ role: '2' },{})
     const [userName, setuserName] = useState('')
     const [userEmail, setuserEmail] = useState('')
     const [userPassword, setuserPassword] = useState('')

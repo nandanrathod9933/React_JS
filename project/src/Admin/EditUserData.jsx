@@ -1,15 +1,48 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import CustomHook from '../Hook/customHook';
 
 const EditUserData = () => {
     const [errorMsg, setErrorMsg] = useState(false);
-    const [editUserData, setEditUserData] = useState();
+    const [state, setState] = useState({ name: "", email: "", password: "" });
+    const { handleChange, inp, errors, handleUpdate } = CustomHook(state, {})
+    const navigate = useNavigate()
 
     const { id } = useParams("");
     useEffect(() => {
         LoginDataByID()
     }, []);
+
+    const UpdateBtnClick = async () => {
+        console.log("called", inp);
+        const response = await axios.put(`http://localhost:5000/userdata/${id}`, inp)
+
+            .then((response) => {
+                if (response.status == 200) { //server connecte thai tyare erroe show thase
+                    navigate("/admin/adminallusers")
+
+
+                    console.log("server connected"); // server connect thai jai to
+                } else {
+                    console.log("error while connecting to the server"); // server connect no thai to
+                }
+
+
+            }).catch((error) => {
+                setErrorMsg(true)
+                if (error.response) {
+                    console.log(error.response);
+                    console.log("server responded");
+                } else if (error.request) {
+                    // server j call no thai ke server j bandh hoi tyare aa error
+                    console.log("network error");
+                } else {
+                    console.log(error);
+                }
+            });
+    }
+
     const LoginDataByID = async (event) => {
 
         try {
@@ -17,24 +50,10 @@ const EditUserData = () => {
 
                 .then((response) => {
                     if (response.status == 200) { //server connecte thai tyare erroe show thase
-                        // console.log(response.data.name);
-                        // console.log(response.data.id);
-                        // console.log(response.data.email);
-                        // console.log(response.data.password);
-                        // setEditUserData(response.data)
 
-                        let allUsersDataList = ""
-                        allUsersDataList = Object.entries(response.data).map(([key, value], i) => {
-                            // console.log(key);
-                            // console.log(value);
-                            // console.log(i);
-                            return (
-                                <div key={i}>
-                                    <input type="text" value={value} /> <br /> <br />
-                                </div>
-                            );
-                        });
-                        setEditUserData(allUsersDataList);
+                        console.log(response.data);
+                        handleUpdate(response.data)
+                        setErrorMsg(false)
 
                         console.log("server connected"); // server connect thai jai to
                     } else {
@@ -61,8 +80,45 @@ const EditUserData = () => {
     };
     return (
         <>
-            <div>
-                {editUserData}
+            <div className="py-3">
+                {JSON.stringify(inp)}
+                {/* {JSON.stringify(state)} */}
+                <div className="card ">
+                    <div className="card-body">
+                        <div className="row">
+                            <div className="col-6">
+                                <div className="row my-2">
+                                    <div className="col">
+                                        <input type="text" className='form-control' placeholder='Enter Your Username'
+                                            value={errorMsg ? "true" : inp.name}
+                                            name='name' id='name' onChange={handleChange} />
+                                    </div>
+                                </div>
+                                <div className="row my-2">
+                                    <div className="col">
+                                        <input type="email" className='form-control' placeholder='Enter Your Username'
+                                            value={errorMsg ? "true" : inp.email}
+                                            name='email' id='email' onChange={handleChange} />
+                                    </div>
+                                </div>
+                                <div className="row my-2">
+                                    <div className="col">
+                                        <input type="password" className='form-control' placeholder='Enter Your password'
+                                            value={errorMsg ? "true" : inp.password}
+                                            name='password' id='password' onChange={handleChange} />
+                                    </div>
+                                </div>
+                                <div className="row my-2">
+                                    <div className="col">
+                                        <input type="button" className="btn btn-primary"
+                                            value="Upadate"
+                                            name='upadate' onClick={UpdateBtnClick} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     );

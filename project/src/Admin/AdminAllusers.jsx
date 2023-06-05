@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const AdminAllusers = () => {
 
@@ -9,10 +9,10 @@ const AdminAllusers = () => {
     const [allUsers, setAllUsers] = useState("");
 
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const [errorMsg, setErrorMsg] = useState(false);
 
- 
+
 
 
     useEffect(() => {
@@ -22,7 +22,6 @@ const AdminAllusers = () => {
 
         try {
             const response = await axios.get("http://localhost:5000/userdata")
-
                 .then((response) => {
                     // console.log(response);
                     if (response.status == 200) { //server connecte thai tyare erroe show thase
@@ -44,7 +43,7 @@ const AdminAllusers = () => {
                                     <td>{value.email}</td>
                                     <td>{value.password}</td>
                                     <td className='text-center'><Link className='btn btn-primary' to={`/admin/edituserdata/${value.id}`}>edit </Link></td>
-                                    <td className='text-center'><Link className='btn btn-danger'>delete </Link></td>
+                                    <td className='text-center'><Link className='btn btn-danger' onClick={() => deletebtn(value.id)}>  delete </Link></td>
                                 </tr>);
                         });
                         setAllUsers(allUsersDataList);
@@ -76,6 +75,16 @@ const AdminAllusers = () => {
 
     };
 
+    const deletebtn = async (id) => {
+        console.log(id);
+        await axios.delete(`http://localhost:5000/userdata/${id}`).then(res => {
+            console.log(res);
+            // navigate("/admin/adminallusers")
+            // const del = employees.filter(employee => id !== employee.id)
+            // setEmployees(del)
+        })
+    }
+
     return (
         <>
             <section>
@@ -84,7 +93,7 @@ const AdminAllusers = () => {
                 <table className='table mt-5  table-bordered border-dark' >
                     <thead className='bg-dark text-light'>
                         <tr>
-                            <th>No.</th>
+                            <th>id.</th>
                             <th className='text-center' >Name</th>
                             <th className='text-center'>Email</th>
                             <th className='text-center'>password</th>
@@ -93,7 +102,7 @@ const AdminAllusers = () => {
                     </thead>
                     <tbody>
 
-                        {loader ? allUsers : <tr><td colSpan={5}>"data"</td></tr>}
+                        {loader ? allUsers : <tr><td colSpan={5}>"no data"</td></tr>}
 
 
                     </tbody>

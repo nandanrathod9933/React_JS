@@ -51,15 +51,8 @@
     },
     {
       "role": "2",
-      "email": "akshpateltop@gmail.com",
-      "name": "aksh",
-      "password": "akshpateltop@",
-      "id": 2
-    },
-    {
-      "role": "2",
       "email": "kaushikbhai@gmail.com",
-      "name": "kaushikbhai",
+      "name": "kaushikbhai12",
       "password": "kaushik123",
       "id": 3
     },
@@ -72,10 +65,31 @@
     },
     {
       "role": "2",
-      "name": "dhvanivsaksh",
-      "email": "DvsA@gmail.com",
-      "password": "AloveD",
+      "name": "himanshu",
+      "email": "himanshu@gmail.com",
+      "password": "Himanshu0706",
       "id": 5
+    },
+    {
+      "role": "2",
+      "name": "Vipul",
+      "email": "vmmemakiya@gmail.com",
+      "password": "v1",
+      "id": 6
+    },
+    {
+      "role": "2",
+      "name": "nandan",
+      "email": "nandan@gmail.com",
+      "password": "hhhh",
+      "id": 7
+    },
+    {
+      "role": "2",
+      "name": "thegiftsbag",
+      "email": "thegiftsbag@gmail.com",
+      "password": "g1",
+      "id": 8
     }
   ]
 }
