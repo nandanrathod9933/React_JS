@@ -10,7 +10,7 @@ import APIExample from "./Component/ApiExample.jsx"
 
 
 // import ErrorPage from "./ErrorPage.jsx"
-const AdminRoute = React.lazy(() => import('./Admin/AdminRoute.jsx'))
+const AdminRoute = React.lazy(() => import('./Admin/AdminRoute.jsx'));
 const Router = createBrowserRouter([
     {
         path: "/",

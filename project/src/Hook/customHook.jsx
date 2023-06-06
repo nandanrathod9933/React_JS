@@ -19,14 +19,20 @@ const CustomHook = (intval, initError) => {
 
         setInput((inp) => ({ ...inp, [e.target.name]: e.target.value }))
         console.log(inp);
+        console.log(e.target.name, "custom");
         let spanId = e.target.name + "error";
+        console.log(spanId);
         // console.log(e.target.className);
+        console.log("name", e.currentTarget.classList);
+        console.log("name", e.target.className);
 
+        // if (e.target.className.includes("logininput")) {
+        if (e.currentTarget.classList.contains("logininput")) {
+            // if (e.target.className("logininput")) {
 
-        if (e.target.className === "logininput") {
-            // console.log("error");
             if (e.target.value == "") {
                 setError({ ...errors, [spanId]: "this fild is required" });
+
             } else {
                 setError({ ...errors, [spanId]: "" });
                 if (e.target.type == "email") {

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import CustomHook from '../Hook/customHook';
 
 const EditUserData = () => {
@@ -21,8 +21,6 @@ const EditUserData = () => {
             .then((response) => {
                 if (response.status == 200) { //server connecte thai tyare erroe show thase
                     navigate("/admin/adminallusers")
-
-
                     console.log("server connected"); // server connect thai jai to
                 } else {
                     console.log("error while connecting to the server"); // server connect no thai to
@@ -110,9 +108,16 @@ const EditUserData = () => {
                                 </div>
                                 <div className="row my-2">
                                     <div className="col">
-                                        <input type="button" className="btn btn-primary"
-                                            value="Upadate"
-                                            name='upadate' onClick={UpdateBtnClick} />
+                                        <div className="row my-3">
+                                            <div className="col">
+                                                <input type="button" className="btn btn-primary"
+                                                    value="Upadate"
+                                                    name='upadate' onClick={UpdateBtnClick} />
+                                            </div>
+                                            <div className="col">
+                                                <Link className="btn btn-primary" to="/admin/adminallusers">Back</Link>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
