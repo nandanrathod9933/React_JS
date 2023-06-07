@@ -40,6 +40,7 @@ const AdminAllusers = () => {
                             // console.log(key);
                             // console.log(value);
                             // console.log(i);
+                            console.log(value.password);
                             return (
                                 <tr key={key}>
                                     <td>{value.id}</td>
@@ -111,18 +112,13 @@ const AdminAllusers = () => {
             let allUserDataList = Object.entries(result).map(([key, value], i) => {
                 return (
                     <tr key={key}>
-                        <td>{i + 1}</td>
+                        <td>{value.id}</td>
                         <td>{value.name}</td>
                         <td>{value.email}</td>
-                        <td>{value.id}</td>
-                        <td>
-                            <Link className='btn btn-primary text-light' to={`/admin/editeadminalluser/${value.id}`}>Edit</Link>
-                        </td>
-                        <td>
-                            <Link className='btn btn-danger' onClick={() => deletebtn(value.id)} to='#'>DELETE</Link>
-                        </td>
-                    </tr>
-                );
+                        <td>{value.password}</td>
+                        <td className='text-center'><Link className='btn btn-primary' to={`/admin/edituserdata/${value.id}`}>edit </Link></td>
+                        <td className='text-center'><Link className='btn btn-danger' onClick={() => deletebtn(value.id)}>  delete </Link></td>
+                    </tr>);
             });
 
             setAllUsers(allUserDataList);

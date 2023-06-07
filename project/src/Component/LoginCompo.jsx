@@ -7,12 +7,12 @@ import { useCookies } from 'react-cookie';
 
 
 const LoginCompo = () => {
-    const { handleChange, inp, errors } = CustomHook({ role: '2' },{})
+    const { handleChange, inp, errors } = CustomHook({ role: '2' }, {})
     const [userName, setuserName] = useState('')
     const [userEmail, setuserEmail] = useState('')
     const [userPassword, setuserPassword] = useState('')
     const [loginMsg, setLoginMsg] = useState('')
-    const [cookies, setCookie] = useCookies(['name']);
+    const [cookies, setCookie, removeCookie] = useCookies(['name']);
 
 
     const navigate = useNavigate()
@@ -35,20 +35,25 @@ const LoginCompo = () => {
                     if (response.status == 200) { //server connecte thai tyare erroe show thase
 
                         console.log(response);
-                        console.log(response.data);
+                        console.log("nandan", response.data);
                         if (response.data.length > 0) {
-                            setCookie('Name', response.data[0].name);
+                            setCookie('name', response.data[0].name);
                             setCookie('id', response.data[0].id);
+
+                            // if (document.cookies === "") {
+                            //     console.log("admin");
+                            // } else {
+                            //     console.log("user");
+                            // }
+                            console.log("cookies", cookies.id);
                             if (response.data[0].role == 1) {
                                 navigate("/admin/admindashboard")
                             } else {
-                                navigate("/userdashboard")
+                                navigate("/")
                             }
                         } else {
                             setLoginMsg("invalid user");
                         }
-
-
                         console.log("server connected"); // server connect thai jai to
                     } else {
                         console.log("error while connecting to the server"); // server connect no thai to
@@ -150,12 +155,24 @@ const LoginCompo = () => {
     //     CustomHook(".logininput")
     // })
 
+    const handlelogin = () => {
+        axios.get(`http://localhost:5000/userdata?email=${inp.email}&password=${inp.password}`)
+            .then((response) => {
+                removeCookie("name");
+                removeCookie("id");
+            });
+    }
+
     return (
         <>
             {errorMsg ? <>Error while connecting please try after  some time</> : <>
 
                 <section className='login_sec'>
-
+                    {
+                        cookies.name && (
+                            <button onClick={handlelogin}>login out</button>
+                        )
+                    }
                     <Link to="/" className='home_link'><i className="fa-solid fa-2x fa-house"></i></Link>
                     <div className={btnclick ? "container  right-panel-active " : "container"} id="container">
                         <div className="form-container sign-in-container">
