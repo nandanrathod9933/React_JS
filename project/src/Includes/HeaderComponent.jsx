@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     MDBContainer,
     MDBNavbar,
@@ -15,10 +15,25 @@ import {
     MDBDropdownItem,
     MDBCollapse,
 } from 'mdb-react-ui-kit';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 const HeaderComponent = () => {
     const [showBasic, setShowBasic] = useState(false);
+    const [cookies, setCookie, removeCookie] = useCookies();
+    const navigate = useNavigate()
+    // const [islogin, setIsLogin] = useState(cookies.name !== undefined && cookies.id !== undefined);
+    const [islogin, setIsLogin] = useState(!!cookies.name);
+
+
+    const handlelogout = () => {
+        console.log("called");
+        removeCookie('id');
+        removeCookie('name');
+        navigate("/loginpage")
+    }
+
+
 
     const data = [
         { key: `/`, value: "Home" },
@@ -53,13 +68,21 @@ const HeaderComponent = () => {
                         <MDBNavbarNav className='ms-auto w-auto me-5 mb-2 mb-lg-0'>
                             {mapdata}
 
-                            <MDBNavbarItem className='ms-5'>
-                                <button className='btn  btn-primary' >  <Link to="/loginpage" className='text-light'>login </Link>   </button>
-                            </MDBNavbarItem>
+
+                            {
+                                islogin ? (<MDBNavbarItem className='ms-5'>
+                                    <button className='btn btn-primary' onClick={handlelogout}>log out</button>
+                                </MDBNavbarItem>)
+                                    :
+                                    (<MDBNavbarItem className='ms-5'>
+                                        <button className='btn btn-primary' ><Link to="/loginpage" className='text-light'>login </Link></button>
+                                    </MDBNavbarItem>)
+                            }
+
                         </MDBNavbarNav>
                     </MDBCollapse>
                 </MDBContainer>
-            </MDBNavbar>
+            </MDBNavbar >
         </>
     );
 };

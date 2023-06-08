@@ -19,6 +19,14 @@ const LoginCompo = () => {
     const [btnclick, setbtnclick] = useState(false);
     const [errorMsg, setErrorMsg] = useState(false);
 
+    // useEffect(() => {
+    //     // console.log("Called");
+    //     const response = axios.get(`http://localhost:5000/userdata`)
+    //         .then((response) => {
+    //             console.log("called");
+    //         })
+    // })
+
     const signInBtn = () => {
         // console.log("called");
         setbtnclick(!btnclick);
@@ -35,21 +43,16 @@ const LoginCompo = () => {
                     if (response.status == 200) { //server connecte thai tyare erroe show thase
 
                         console.log(response);
-                        console.log("nandan", response.data);
+                        // console.log("nandan", response.data);
+                        console.log('cookies', cookies);
                         if (response.data.length > 0) {
                             setCookie('name', response.data[0].name);
                             setCookie('id', response.data[0].id);
-
-                            // if (document.cookies === "") {
-                            //     console.log("admin");
-                            // } else {
-                            //     console.log("user");
-                            // }
                             console.log("cookies", cookies.id);
                             if (response.data[0].role == 1) {
                                 navigate("/admin/admindashboard")
                             } else {
-                                navigate("/")
+                                navigate("/userdashboard")
                             }
                         } else {
                             setLoginMsg("invalid user");
@@ -155,24 +158,13 @@ const LoginCompo = () => {
     //     CustomHook(".logininput")
     // })
 
-    const handlelogin = () => {
-        axios.get(`http://localhost:5000/userdata?email=${inp.email}&password=${inp.password}`)
-            .then((response) => {
-                removeCookie("name");
-                removeCookie("id");
-            });
-    }
 
     return (
         <>
             {errorMsg ? <>Error while connecting please try after  some time</> : <>
 
                 <section className='login_sec'>
-                    {
-                        cookies.name && (
-                            <button onClick={handlelogin}>login out</button>
-                        )
-                    }
+
                     <Link to="/" className='home_link'><i className="fa-solid fa-2x fa-house"></i></Link>
                     <div className={btnclick ? "container  right-panel-active " : "container"} id="container">
                         <div className="form-container sign-in-container">

@@ -1,12 +1,28 @@
 import React, { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 
 const AdminMenu = () => {
     const [aside, setasie] = useState(false)
+    const [cookies, setCookie, removeCookie] = useCookies();
+    const navigate = useNavigate()
+
 
     const btnclick = () => {
         setasie(!aside)
     }
+    const handlelogin = () => {
+        // axios.get(`http://localhost:5000/userdata?email=${inp.email}&password=${inp.password}`)
+        //     .then((response) => {
+        setCookie('name', null);
+        setCookie('id', null);
+        removeCookie("name");
+        removeCookie("id");
+        navigate("/loginpage")
+
+        // });
+    }
+
 
     return (
         <>
@@ -16,6 +32,8 @@ const AdminMenu = () => {
                     <ul className='ps-0'>
                         <li><Link to='admindashboard'> dashboard</Link></li>
                         <li><Link to='adminallusers'>All Users</Link></li>
+                        <li>  <button onClick={handlelogin} className='btn btn-primary mt-5'>login out</button></li>
+
                     </ul>
 
                 </div>
