@@ -14,10 +14,12 @@ const AdminMenu = () => {
     const handlelogin = () => {
         // axios.get(`http://localhost:5000/userdata?email=${inp.email}&password=${inp.password}`)
         //     .then((response) => {
-        setCookie('name', null);
-        setCookie('id', null);
+        // setCookie('name', null);
+        // setCookie('id', null);
         removeCookie("name");
         removeCookie("id");
+        localStorage.removeItem('name');
+        localStorage.removeItem('id');
         navigate("/loginpage")
 
         // });

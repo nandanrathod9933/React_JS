@@ -57,8 +57,6 @@ const EditUserData = () => {
                     } else {
                         console.log("error while connecting to the server"); // server connect no thai to
                     }
-
-
                 }).catch((error) => {
                     setErrorMsg(true)
                     if (error.response) {

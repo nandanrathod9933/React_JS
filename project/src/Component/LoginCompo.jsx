@@ -18,14 +18,17 @@ const LoginCompo = () => {
     const navigate = useNavigate()
     const [btnclick, setbtnclick] = useState(false);
     const [errorMsg, setErrorMsg] = useState(false);
+    const [ShowPassword, setShowPassword] = useState(false);
+    const [conformPassword, setConformPassword] = useState();
 
     // useEffect(() => {
     //     // console.log("Called");
-    //     const response = axios.get(`http://localhost:5000/userdata`)
-    //         .then((response) => {
-    //             console.log("called");
-    //         })
-    // })
+    //     // const response = axios.get(`http://localhost:5000/userdata`)
+    //     //     .then((response) => {
+    //     //         console.log("called");
+    //     //     })
+    //     console.log("called navigate");  
+    // }, [navigate])
 
     const signInBtn = () => {
         // console.log("called");
@@ -48,11 +51,13 @@ const LoginCompo = () => {
                         if (response.data.length > 0) {
                             setCookie('name', response.data[0].name);
                             setCookie('id', response.data[0].id);
+                            localStorage.setItem('name', response.data[0].name);
+                            localStorage.setItem('id', response.data[0].id);
                             console.log("cookies", cookies.id);
                             if (response.data[0].role == 1) {
                                 navigate("/admin/admindashboard")
                             } else {
-                                navigate("/userdashboard")
+                                navigate("/")
                             }
                         } else {
                             setLoginMsg("invalid user");
@@ -97,6 +102,10 @@ const LoginCompo = () => {
         console.log("called");
         console.log("loginpage", inp);
 
+        if (userPassword !== conformPassword) {
+            alert("check your password")
+            return;
+        }
         // axios.post('http://localhost:5000/userdata', inp).then(function (response) {
         //     console.log(response);
         // }).catch(function (error) {
@@ -143,13 +152,16 @@ const LoginCompo = () => {
             setuserName('')
             setuserEmail('')
             setuserPassword('')
+            setConformPassword('')
             // Navigate("/login")
         })
 
     }
 
 
-
+    const HandleChecked = () => {
+        setShowPassword(!ShowPassword)
+    }
 
 
 
@@ -210,8 +222,14 @@ const LoginCompo = () => {
                                 {errors ? <span>{errors.nameerror}</span> : <></>}
                                 <input type="email" placeholder="Email" onBlur={handleChange} onChange={(e) => setuserEmail(e.target.value)} className='logininput' id='uemail' name='email' value={userEmail} />
                                 {errors ? <span>{errors.emailerror}</span> : <></>}
-                                <input type="password" placeholder="Password" onBlur={handleChange} onChange={(e) => setuserPassword(e.target.value)} className='logininput' id='upass' name='password' value={userPassword} />
+                                <input type={ShowPassword ? "text" : "password"} placeholder="Password" onBlur={handleChange} onChange={(e) => setuserPassword(e.target.value)} className='logininput' id='upass' name='password' value={userPassword} />
                                 {errors ? <span>{errors.passworderror}</span> : <></>}
+                                <input type={ShowPassword ? "text" : "password"} placeholder="Confrom Password" onBlur={handleChange} onChange={(e) => setConformPassword(e.target.value)} className='logininput' id='upass' name='conformpassword' value={conformPassword} />
+                                {errors ? <span>{errors.conformpassworderror}</span> : <></>}
+                                <div>
+                                    <input type="checkbox" name="checkbox" id="checkbox" defaultChecked={ShowPassword} onClick={HandleChecked} />
+                                    <label htmlFor="checkbox" > Show password</label>
+                                </div>
                                 <button type='submit'  >Sign Up</button>
                             </form>
                         </div>

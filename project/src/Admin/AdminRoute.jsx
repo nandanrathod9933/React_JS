@@ -16,7 +16,7 @@ const AdminRoute = () => {
         if (!cookies.id && !cookies.name) {
             navigate("/loginpage")
         }
-    }, [cookies])
+    }, [cookies, navigate])
     return (
         <>
             <Routes>

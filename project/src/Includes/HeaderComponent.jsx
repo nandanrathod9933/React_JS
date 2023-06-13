@@ -30,6 +30,9 @@ const HeaderComponent = () => {
         console.log("called");
         removeCookie('id');
         removeCookie('name');
+        setIsLogin(false)
+        // localStorage.removeItem('name');
+        // localStorage.removeItem('id');  
         navigate("/loginpage")
     }
 
