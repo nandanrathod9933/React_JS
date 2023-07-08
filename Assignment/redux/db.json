@@ -1,0 +1,111 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Satheesh",
+      "email": "Sat@mail.com",
+      "adderss": "South street"
+    },
+    {
+      "id": 2,
+      "name": "John",
+      "email": "john@mail.com",
+      "adderss": "North street"
+    },
+    {
+      "id": 3,
+      "name": "Robert",
+      "email": "robert@mail.com",
+      "adderss": "East street"
+    },
+    {
+      "id": 4,
+      "name": "Mani",
+      "email": "mani@mail.com",
+      "adderss": "West street"
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "userdata": [
+    {
+      "name": "nandan9933",
+      "email": "test@test.com",
+      "password": "123",
+      "id": 1,
+      "role": "1"
+    },
+    {
+      "role": "2",
+      "email": "kaushikbhai@gmail.com",
+      "name": "kaushikbhai12",
+      "password": "kaushik123",
+      "id": 3
+    },
+    {
+      "role": "2",
+      "email": "vivek@gmail.com",
+      "password": "1234",
+      "name": "vivek",
+      "id": 4
+    },
+    {
+      "role": "2",
+      "name": "checking",
+      "email": "checking@gmail.com",
+      "password": "12345",
+      "id": 5
+    },
+    {
+      "role": "2",
+      "name": "ram",
+      "email": "ram@gmail.com",
+      "password": "ram",
+      "id": 6
+    },
+    {
+      "role": "2",
+      "name": "aksh",
+      "email": "aksh@gmail.com",
+      "password": "123",
+      "id": 7
+    },
+    {
+      "role": "2",
+      "name": "add",
+      "email": "add@gmail.com",
+      "password": "123",
+      "id": 8
+    },
+    {
+      "role": "2",
+      "name": "test",
+      "email": "kaushikbhai@gmail.com",
+      "password": "2345",
+      "id": 10
+    },
+    {
+      "role": "2",
+      "name": "kaushik",
+      "email": "kaushik22@gmail.com",
+      "password": "12345",
+      "id": 11
+    }
+  ]
+}
+
+
