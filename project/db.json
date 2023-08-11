@@ -104,8 +104,14 @@
       "email": "kaushik22@gmail.com",
       "password": "12345",
       "id": 11
+    },
+    {
+      "role": "2",
+      "name": "test",
+      "email": "test@test.com",
+      "password": "1234",
+      "conformpassword": "1234",
+      "id": 12
     }
   ]
 }
-
-

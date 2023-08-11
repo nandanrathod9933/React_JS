@@ -6,28 +6,30 @@ const FunctionalCompoUseMemo = () => {
     const [subadd, setsubadd] = useState(0)
 
     const addtion = () => {
+        console.log("add");
         setadd(add + 1)
     }
     const subaddtion = () => {
+        console.log("subaddtion");
         setsubadd(subadd - 1)
     }
 
-    // const multiplication = () => {
-    //     console.log("multiplication");
-    //     return add * 100
-    // }
-    const multiplication = useMemo(() => {
+    const multiplication = () => {
         console.log("multiplication");
         return add * 100
-    },
-        [add]
-    )
+    }
+    // const multiplication = useMemo(() => {
+    //     console.log("multiplication");
+    //     return add * 100
+    // },
+    //     [add]
+    // )
 
 
 
     return (
         <>
-            <p>multiplication : {multiplication}</p>
+            <p>multiplication : {multiplication()}</p>
             <MDBBtn onClick={addtion}>Addtion</MDBBtn>
             &nbsp; {add} <br /> <br />
             <MDBBtn onClick={subaddtion}>Subaddtion</MDBBtn>

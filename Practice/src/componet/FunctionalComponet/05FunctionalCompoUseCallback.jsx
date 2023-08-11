@@ -18,7 +18,7 @@ const FunctionalCompoUseCallback = () => {
     //     setstate(state + 1)
     // }
 
-
+    console.log("callback com");
     return (
         <>
             <div>
